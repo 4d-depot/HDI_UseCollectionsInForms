@@ -1,0 +1,637 @@
+{
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"windowSizingX": "fixed",
+	"windowSizingY": "fixed",
+	"windowMinWidth": 1000,
+	"windowMinHeight": 0,
+	"windowMaxWidth": 32767,
+	"windowMaxHeight": 32767,
+	"events": [
+		"onLoad",
+		"onPageChange"
+	],
+	"windowTitle": "window title",
+	"destination": "detailScreen",
+	"pages": [
+		{
+			"objects": {}
+		},
+		{
+			"objects": {
+				"Button": {
+					"type": "button",
+					"text": "DEMO",
+					"top": 820,
+					"left": 800,
+					"width": 160,
+					"height": 22,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button.4dm",
+					"fontWeight": "bold",
+					"focusable": false
+				},
+				"Text6": {
+					"type": "text",
+					"text": "Prior to 4D v19, the predefined values of form objects needed to be based on string lists or arrays…",
+					"top": 27,
+					"left": 170,
+					"width": 580,
+					"height": 60,
+					"fontSize": 24
+				},
+				"Text7": {
+					"type": "text",
+					"text": "… for combo boxes,",
+					"top": 395,
+					"left": 618,
+					"width": 340,
+					"height": 90,
+					"fontSize": 24
+				},
+				"Text10": {
+					"type": "text",
+					"text": "… for popup-dropdown lists.",
+					"top": 607,
+					"left": 619,
+					"width": 340,
+					"height": 90,
+					"fontSize": 24
+				},
+				"Text11": {
+					"type": "text",
+					"text": "All these values can now be defined from the contents of a  collection!  --->",
+					"top": 817,
+					"left": 10,
+					"width": 780,
+					"height": 30,
+					"fontSize": 20,
+					"fontWeight": "bold",
+					"textAlign": "right"
+				},
+				"Line3": {
+					"type": "line",
+					"top": 110,
+					"left": 20,
+					"width": 960,
+					"height": 1
+				},
+				"Text21": {
+					"type": "text",
+					"text": "…for tab controls,",
+					"top": 173,
+					"left": 619,
+					"width": 340,
+					"height": 90,
+					"fontSize": 24
+				},
+				"Line4": {
+					"type": "line",
+					"top": 770,
+					"left": 20,
+					"width": 960,
+					"height": 1
+				},
+				"Static Picture4": {
+					"type": "picture",
+					"top": 120,
+					"left": 40,
+					"width": 500,
+					"height": 640,
+					"picture": "/RESOURCES/Images/Main.png",
+					"pictureFormat": "scaled"
+				},
+				"Line6": {
+					"type": "line",
+					"top": 330,
+					"left": 20,
+					"width": 960,
+					"height": 1
+				},
+				"Line7": {
+					"type": "line",
+					"top": 540,
+					"left": 20,
+					"width": 960,
+					"height": 1
+				}
+			}
+		},
+		{
+			"objects": {
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 560,
+					"left": 40,
+					"width": 670,
+					"height": 180,
+					"borderRadius": 10,
+					"fill": "#E5E5E5",
+					"stroke": "#c0c0c0"
+				},
+				"Rectangle": {
+					"type": "rectangle",
+					"top": 300,
+					"left": 40,
+					"width": 670,
+					"height": 220,
+					"borderRadius": 10,
+					"fill": "#E5E5E5",
+					"stroke": "#c0c0c0"
+				},
+				"Rectangle4": {
+					"type": "rectangle",
+					"top": 315,
+					"left": 430,
+					"width": 240,
+					"height": 50,
+					"fill": "transparent",
+					"strokeDashArray": [
+						3,
+						5
+					],
+					"stroke": "#da70d6",
+					"strokeWidth": 2
+				},
+				"Rectangle5": {
+					"type": "rectangle",
+					"top": 575,
+					"left": 430,
+					"width": 240,
+					"height": 50,
+					"fill": "transparent",
+					"strokeDashArray": [
+						3,
+						5
+					],
+					"stroke": "#da70d6",
+					"strokeWidth": 2
+				},
+				"Rectangle3": {
+					"type": "rectangle",
+					"top": 78,
+					"left": 60,
+					"width": 630,
+					"height": 50,
+					"fill": "transparent",
+					"strokeDashArray": [
+						3,
+						5
+					],
+					"stroke": "#da70d6",
+					"strokeWidth": 2
+				},
+				"tabControl": {
+					"type": "tab",
+					"text": "Tab control",
+					"top": 90,
+					"left": 40,
+					"width": 670,
+					"height": 170,
+					"dataSource": "oTab",
+					"events": [
+						"onClick"
+					],
+					"dataSourceTypeHint": "object"
+				},
+				"ComboBox": {
+					"type": "combo",
+					"left": 440,
+					"top": 330,
+					"width": 220,
+					"height": 22,
+					"events": [
+						"onDataChange"
+					],
+					"dataSource": "oCombo",
+					"automaticInsertion": true,
+					"dataSourceTypeHint": "object",
+					"textFormat": ""
+				},
+				"dropDown": {
+					"type": "dropdown",
+					"left": 440,
+					"top": 590,
+					"width": 220,
+					"height": 22,
+					"events": [
+						"onClick",
+						"onDataChange"
+					],
+					"dataSource": "oDrop",
+					"dataSourceTypeHint": "object",
+					"timeFormat": "systemShort"
+				},
+				"Text": {
+					"type": "text",
+					"text": "In all cases, the collection must be part of an object variable linked to the form object.",
+					"top": 20,
+					"left": 40,
+					"width": 920,
+					"height": 30,
+					"fontSize": 18,
+					"fontWeight": "bold",
+					"textAlign": "center"
+				},
+				"btnSetup1": {
+					"type": "button",
+					"text": "Setup tab control",
+					"top": 150,
+					"left": 140,
+					"width": 220,
+					"height": 22,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/btnSetup1.4dm",
+					"focusable": false
+				},
+				"Input": {
+					"type": "input",
+					"left": 740,
+					"top": 100,
+					"width": 220,
+					"height": 160,
+					"dataSource": "oTab",
+					"dataSourceTypeHint": "object",
+					"enterable": false
+				},
+				"btnSetup2": {
+					"type": "button",
+					"text": "Setup combo box list",
+					"top": 329,
+					"left": 140,
+					"width": 220,
+					"height": 22,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/btnSetup2.4dm",
+					"focusable": false
+				},
+				"Input1": {
+					"type": "input",
+					"left": 740,
+					"top": 300,
+					"width": 220,
+					"height": 220,
+					"dataSource": "oCombo",
+					"dataSourceTypeHint": "object",
+					"enterable": false
+				},
+				"Text1": {
+					"type": "text",
+					"text": "Note: This combo box has the \"automatic insertion\" option checked, so each new value will be added to the collection.",
+					"top": 422,
+					"left": 140,
+					"width": 510,
+					"height": 40,
+					"fontSize": 14,
+					"fontWeight": "normal",
+					"fontStyle": "italic",
+					"stroke": "#0000cd"
+				},
+				"btnSetup3": {
+					"type": "button",
+					"text": "Setup dropdown list",
+					"top": 589,
+					"left": 140,
+					"width": 220,
+					"height": 22,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/btnSetup3.4dm",
+					"focusable": false
+				},
+				"Input2": {
+					"type": "input",
+					"left": 740,
+					"top": 560,
+					"width": 220,
+					"height": 180,
+					"dataSource": "oDrop",
+					"dataSourceTypeHint": "object",
+					"enterable": false
+				},
+				"Line1": {
+					"type": "line",
+					"top": 280,
+					"left": 20,
+					"width": 960,
+					"height": 1
+				},
+				"Line2": {
+					"type": "line",
+					"top": 539,
+					"left": 20,
+					"width": 960,
+					"height": 1
+				},
+				"Text2": {
+					"type": "text",
+					"text": "1",
+					"top": 140,
+					"left": 60,
+					"width": 40,
+					"height": 40,
+					"fontSize": 32,
+					"textAlign": "center"
+				},
+				"Text3": {
+					"type": "text",
+					"text": "2",
+					"top": 320,
+					"left": 60,
+					"width": 40,
+					"height": 40,
+					"fontSize": 32,
+					"textAlign": "center"
+				},
+				"Text8": {
+					"type": "text",
+					"text": "3",
+					"top": 580,
+					"left": 60,
+					"width": 40,
+					"height": 40,
+					"fontSize": 32,
+					"textAlign": "center"
+				},
+				"Text9": {
+					"type": "text",
+					"text": "a-",
+					"top": 150,
+					"left": 100,
+					"width": 40,
+					"height": 20,
+					"fontSize": 16,
+					"textAlign": "center"
+				},
+				"Text12": {
+					"type": "text",
+					"text": "b-",
+					"top": 190,
+					"left": 100,
+					"width": 40,
+					"height": 20,
+					"fontSize": 16,
+					"textAlign": "center"
+				},
+				"Text13": {
+					"type": "text",
+					"text": "Select a new tab above and see  how the content of the object changes",
+					"top": 190,
+					"left": 140,
+					"width": 540,
+					"height": 22,
+					"fontSize": 16,
+					"textAlign": "left",
+					"fontWeight": "normal"
+				},
+				"Text14": {
+					"type": "text",
+					"text": "a-",
+					"top": 330,
+					"left": 100,
+					"width": 40,
+					"height": 20,
+					"fontSize": 16,
+					"textAlign": "center"
+				},
+				"Text15": {
+					"type": "text",
+					"text": "b-",
+					"top": 370,
+					"left": 100,
+					"width": 40,
+					"height": 20,
+					"fontSize": 16,
+					"textAlign": "center"
+				},
+				"Text16": {
+					"type": "text",
+					"text": "Select or enter a value in the combobox and see  how the content of the object changes.",
+					"top": 370,
+					"left": 140,
+					"width": 510,
+					"height": 50,
+					"fontSize": 16,
+					"textAlign": "left",
+					"fontWeight": "normal"
+				},
+				"Text17": {
+					"type": "text",
+					"text": "a-",
+					"top": 590,
+					"left": 100,
+					"width": 40,
+					"height": 20,
+					"fontSize": 16,
+					"textAlign": "center"
+				},
+				"Text18": {
+					"type": "text",
+					"text": "b-",
+					"top": 640,
+					"left": 100,
+					"width": 40,
+					"height": 20,
+					"fontSize": 16,
+					"textAlign": "center"
+				},
+				"Text19": {
+					"type": "text",
+					"text": "Select a value in the dropdown list and see  how the content of the object changes.",
+					"top": 640,
+					"left": 140,
+					"width": 510,
+					"height": 50,
+					"fontSize": 16,
+					"textAlign": "left",
+					"fontWeight": "normal"
+				},
+				"Text20": {
+					"type": "text",
+					"text": "In the cases below, the object variables are \"oTab\", \"oCombo\" and \"oPop\".",
+					"top": 50,
+					"left": 40,
+					"width": 920,
+					"height": 30,
+					"fontSize": 18,
+					"fontWeight": "normal",
+					"textAlign": "center"
+				},
+				"Rectangle2": {
+					"type": "rectangle",
+					"top": 790,
+					"left": 40,
+					"width": 670,
+					"height": 60,
+					"borderRadius": 10,
+					"fill": "#E5E5E5",
+					"stroke": "#c0c0c0"
+				},
+				"Line5": {
+					"type": "line",
+					"top": 769,
+					"left": 20,
+					"width": 960,
+					"height": 1
+				},
+				"Text22": {
+					"type": "text",
+					"text": "4",
+					"top": 800,
+					"left": 60,
+					"width": 40,
+					"height": 40,
+					"fontSize": 32,
+					"textAlign": "center"
+				},
+				"btnSetup4": {
+					"type": "button",
+					"text": "Example from BLOG",
+					"top": 809,
+					"left": 160,
+					"width": 220,
+					"height": 22,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/btnSetup4.4dm",
+					"focusable": false
+				},
+				"Check Box": {
+					"type": "checkbox",
+					"text": "Trace code",
+					"top": 818,
+					"left": 742,
+					"width": 237,
+					"height": 20,
+					"events": [
+						"onClick"
+					],
+					"dataSource": "Form:C1466.trace"
+				},
+				"Text4": {
+					"type": "text",
+					"text": "c-",
+					"top": 220,
+					"left": 100,
+					"width": 40,
+					"height": 20,
+					"fontSize": 16,
+					"textAlign": "center"
+				},
+				"Text5": {
+					"type": "text",
+					"text": "Change the tab control value by programming…",
+					"top": 220,
+					"left": 140,
+					"width": 380,
+					"height": 22,
+					"fontSize": 16,
+					"textAlign": "left",
+					"fontWeight": "normal"
+				},
+				"btnSetup5": {
+					"type": "button",
+					"text": "Change value",
+					"top": 220,
+					"left": 550,
+					"width": 140,
+					"height": 22,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/btnSetup5.4dm",
+					"focusable": false
+				},
+				"Text23": {
+					"type": "text",
+					"text": "c-",
+					"top": 480,
+					"left": 100,
+					"width": 40,
+					"height": 20,
+					"fontSize": 16,
+					"textAlign": "center"
+				},
+				"Text24": {
+					"type": "text",
+					"text": "Change the combo box value by programming…",
+					"top": 480,
+					"left": 140,
+					"width": 380,
+					"height": 22,
+					"fontSize": 16,
+					"textAlign": "left",
+					"fontWeight": "normal"
+				},
+				"btnSetup6": {
+					"type": "button",
+					"text": "Change value",
+					"top": 480,
+					"left": 550,
+					"width": 140,
+					"height": 22,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/btnSetup6.4dm",
+					"focusable": false
+				},
+				"Text25": {
+					"type": "text",
+					"text": "c-",
+					"top": 700,
+					"left": 100,
+					"width": 40,
+					"height": 20,
+					"fontSize": 16,
+					"textAlign": "center"
+				},
+				"Text26": {
+					"type": "text",
+					"text": "Change the combo box value by programming…",
+					"top": 700,
+					"left": 140,
+					"width": 380,
+					"height": 22,
+					"fontSize": 16,
+					"textAlign": "left",
+					"fontWeight": "normal"
+				},
+				"btnSetup7": {
+					"type": "button",
+					"text": "Change value",
+					"top": 700,
+					"left": 550,
+					"width": 140,
+					"height": 22,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/btnSetup7.4dm",
+					"focusable": false
+				}
+			}
+		}
+	],
+	"geometryStamp": 4440,
+	"method": "method.4dm",
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {}
+		}
+	},
+	"width": 1000,
+	"height": 880
+}
